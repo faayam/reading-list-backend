@@ -19,7 +19,7 @@ spec:
         image: cicdaksdemof.azurecr.io/reading-list-backend:latest
         env:
         - name: POSTGRES_HOST
-          value: "localhost"
+          value: "20.124.243.138"
         - name: POSTGRES_USER
           value: "postgres"
         - name: POSTGRES_PORT
