@@ -11,18 +11,18 @@ resources:
 variables:
 
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: 'c458e692-2633-4208-aa4f-569b9148db4f'
-  imageRepository: 'faysalmehedireadinglistbackend'
+  dockerRegistryServiceConnection: '963c9a89-97ea-4a2a-8923-86ef6b480ba8'
+  imageRepository: 'cicdaksdemof'
   containerRegistry: 'cicdaksdemof.azurecr.io'
   dockerfilePath: '**/Dockerfile'
   tag: '$(Build.BuildId)'
-  imagePullSecret: 'cicdaksdemof60b3-auth'
+  imagePullSecret: 'cicdaksdemof6025c40f-auth'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
 
   # Azure Service connection
-  azureConnection: '70bc17f5-e2c5-4330-937a-91f6abaf0755'
+  azureConnection: 'c300ffb7-593d-4021-8725-94f52efad87c'
 
 
 stages:
@@ -59,7 +59,7 @@ stages:
     displayName: Deploy
     pool:
       vmImage: $(vmImageName)
-    environment: 'faysalmehedireadinglistbackend.default'
+    environment: 'faysalmehedireadinglistbackend-5134.default'
     strategy:
       runOnce:
         deploy:
@@ -81,4 +81,3 @@ stages:
                 $(imagePullSecret)
               containers: |
                 $(containerRegistry)/$(imageRepository):$(tag)
-
