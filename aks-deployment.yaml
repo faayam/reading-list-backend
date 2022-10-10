@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: reading-list-backend-deployment
+  labels:
+    app: reading-list-backend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: reading-list-backend
+  template:
+    metadata:
+      labels:
+        app: reading-list-backend
+    spec:
+      containers:
+      - name: reading-list-backend
+        image: cicdaksdemof.azurecr.io/reading-list-backend:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 5000
+        
+# Service Type Load Balancer
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: reading-list-backend-svc
+spec:
+  selector:
+    app: reading-list-backend
+  ports:
+    - port: 5000
+      targetPort: 5000
+  type: LoadBalancer
