@@ -1,3 +1,4 @@
+ 
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -23,7 +24,7 @@ spec:
         - name: POSTGRES_USER
           value: "postgres"
         - name: POSTGRES_PORT
-          value: 5432
+          value: "5432"
         - name: POSTGRES_PASSWORD
           value: "postgres"
         - name: POSTGRES_DB
@@ -31,7 +32,7 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
-        
+
 # Service Type Load Balancer
 ---
 apiVersion: v1
