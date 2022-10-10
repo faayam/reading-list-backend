@@ -19,15 +19,15 @@ spec:
         image: cicdaksdemof.azurecr.io/reading-list-backend:latest
         env:
         - name: POSTGRES_HOST
-          value: localhost
+          value: "localhost"
         - name: POSTGRES_USER
-          value: postgres
+          value: "postgres"
         - name: POSTGRES_PORT
           value: 5432
         - name: POSTGRES_PASSWORD
-          value: postgres
+          value: "postgres"
         - name: POSTGRES_DB
-          value: books
+          value: "books"
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
