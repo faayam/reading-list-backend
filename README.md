@@ -1,6 +1,6 @@
 # reading-list-backend
 
-The frontend code have written in React, find out [here](https://github.com/faayam/reading-list-frontend.git)
+The frontend code have written in React, find out [here](https://github.com/faysalmehedi/reading-list-frontend.git)
 
 ### App running instructions:
 
@@ -8,7 +8,7 @@ The frontend code have written in React, find out [here](https://github.com/faay
 sudo apt update
 sudo apt install docker.io
 
-git clone https://github.com/faayam/reading-list-backend.git
+git clone https://github.com/faysalmehedi/reading-list-backend.git
 cd reading-list-backend
 
 sudo docker build . -t reading-list-backend
